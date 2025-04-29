@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { notFound } from 'next/navigation';
 import WorkInProgress from '@/components/WorkInProgress';
 
@@ -7,13 +6,7 @@ const validDemoProjects = [
   'valisthea',
 ];
 
-interface DemoPageProps {
-  params: {
-    id: string;
-  };
-}
-
-const DemoPage: FC<DemoPageProps> = ({ params }) => {
+export default function DemoPage({ params }: { params: { id: string } }) {
   const { id } = params;
   
   if (!validDemoProjects.includes(id)) {
@@ -32,6 +25,4 @@ const DemoPage: FC<DemoPageProps> = ({ params }) => {
       backLink={`/projects/${id}`} // Link back to the project details page
     />
   );
-};
-
-export default DemoPage;
+}
