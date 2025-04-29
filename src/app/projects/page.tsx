@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
@@ -10,6 +9,8 @@ import {
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
 import { categorizeByKeywords } from "@/utils/techCategories";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
@@ -138,7 +139,7 @@ export default function ProjectsPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-primary/10">
               <div className="lg:col-span-5 relative rounded-xl overflow-hidden h-64 lg:h-full">
-                <img
+                <Image
                   src={filteredProjects[0].image}
                   alt={filteredProjects[0].title}
                   className="absolute inset-0 w-full h-full object-cover"
@@ -193,21 +194,21 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
+                  <Link
                     href={`/projects/${filteredProjects[0].id}`}
                     className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors"
                   >
                     View Details
                     <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href={filteredProjects[0].demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-md hover:bg-primary/5 transition-colors"
                   >
                     Live Demo
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -270,14 +271,14 @@ export default function ProjectsPage() {
               I&apos;m always open to discussing new projects, creative ideas,
               or opportunities to be part of your vision.
             </p>
-            <a
+            <Link
               href="/connect"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-full
                 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 group"
             >
               <span className="font-medium">Get in Touch</span>
               <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
