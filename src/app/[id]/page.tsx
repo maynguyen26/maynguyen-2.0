@@ -6,7 +6,7 @@ const validDemoProjects = [
   'valisthea',
 ];
 
-export default function DemoPage({ params }: { params: { id: string } }) {
+export default async function DemoPage({ params }: { params: { id: string } }) {
   const { id } = params;
   
   if (!validDemoProjects.includes(id)) {
