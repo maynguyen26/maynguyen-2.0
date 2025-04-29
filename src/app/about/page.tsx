@@ -20,6 +20,8 @@ import interestsData from "@/data/interests";
 import introductionData from "@/data/introduction";
 import videosData from "@/data/videos";
 
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-card py-16">
@@ -53,7 +55,7 @@ export default function AboutPage() {
             {/* Profile Image with Gradient Border */}
             <div className="relative p-1.5 rounded-2xl bg-gradient-to-br from-primary via-accent to-success">
               <div className="relative h-80 w-full md:h-96 rounded-xl overflow-hidden">
-                <img
+                <Image
                   src="/images/profile.jpg"
                   alt="May Nguyen"
                   className="w-full h-full object-cover object-top rounded-xl"

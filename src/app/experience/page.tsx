@@ -16,6 +16,7 @@ import {
   categorizeByKeywords,
   getCategoryStyles,
 } from "@/utils/techCategories";
+import Link from "next/link";
 
 export default function ExperiencePage() {
   // Animation variants
@@ -103,13 +104,13 @@ export default function ExperiencePage() {
                         {job.description}
                       </p>
 
-                      <a
+                      <Link
                         href={`#${job.company.toLowerCase().replace(/\s+/g, "-")}`}
                         className="text-primary font-medium hover:text-primary-dark flex items-center mt-2 w-fit"
                       >
                         <span>Read more details</span>
                         <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </a>
+                      </Link>
                     </motion.div>
                   ))}
                 </div>

@@ -50,14 +50,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             >
               <CodeBracketIcon className="w-4 h-4" />
             </Link>
-            <a
+            <Link
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 bg-white/90 rounded-full text-primary hover:bg-white transition-colors"
             >
               <GlobeAltIcon className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

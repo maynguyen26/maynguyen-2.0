@@ -12,6 +12,7 @@ import {
   CalendarIcon,
 } from "@heroicons/react/24/outline";
 import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 export default function ConnectPage() {
   const [activeTab, setActiveTab] = useState<"contact" | "social" | "resume">(
@@ -107,12 +108,12 @@ export default function ConnectPage() {
                       Email
                     </p>
                     <p className="font-medium text-gray-800 dark:text-gray-200">
-                      <a
+                      <Link
                         href="mailto:maynguyen26@gmail.com"
                         className="hover:text-primary transition-colors"
                       >
                         maynguyen26@gmail.com
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </div>
@@ -126,12 +127,12 @@ export default function ConnectPage() {
                       Phone
                     </p>
                     <p className="font-medium text-gray-800 dark:text-gray-200">
-                      <a
+                      <Link
                         href="tel:+14165555555"
                         className="hover:text-accent transition-colors"
                       >
                         (519) 240-9219
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </div>
@@ -174,7 +175,7 @@ export default function ConnectPage() {
 
               <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((social) => (
-                  <a
+                  <Link
                     key={social.name}
                     href={social.url}
                     target="_blank"
@@ -183,7 +184,7 @@ export default function ConnectPage() {
                   >
                     <social.icon className="w-5 h-5" />
                     <span className="font-medium">{social.name}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -197,14 +198,14 @@ export default function ConnectPage() {
                 For a comprehensive overview of my skills, experience, and
                 education, download my resume:
               </p>
-              <a
+              <Link
                 href="/resume.pdf"
                 download
                 className="flex items-center justify-center py-3 px-4 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
               >
                 <span className="mr-2">Download Resume (PDF)</span>
                 <ArrowTopRightOnSquareIcon className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </motion.div>
 
@@ -282,7 +283,7 @@ export default function ConnectPage() {
 
                 <div className="grid gap-6 sm:grid-cols-2">
                   {socialLinks.map((social) => (
-                    <a
+                    <Link
                       key={social.name}
                       href={social.url}
                       target="_blank"
@@ -308,7 +309,7 @@ export default function ConnectPage() {
                           <ArrowTopRightOnSquareIcon className="w-3 h-3 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </p>
                       </div>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -387,21 +388,21 @@ export default function ConnectPage() {
                     Let&apos;s schedule a conversation:
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <a
+                    <Link
                       href="mailto:may@maynguyen.ca?subject=Interview Request"
                       className="flex items-center justify-center py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
                     >
                       <EnvelopeIcon className="w-5 h-5 mr-2" />
                       <span>Email to Schedule</span>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/files/may-nguyen-resume.pdf"
                       download
                       className="flex items-center justify-center py-2 px-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                     >
                       <ArrowTopRightOnSquareIcon className="w-5 h-5 mr-2" />
                       <span>Download Resume</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
