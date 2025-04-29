@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/** Color Palette **/
+/*
+#FBF8CC (Lemon chiffon)
+#FDE4CF (Champagne pink)
+#FFCFD2 (Tea-Rose)
+#F1C0E8 (Pink lavender)
+#CFBAF0 (Mauve)
+#A3C4F3 (Jordy Blue)
+#90DBF4 (Non Photo Blue)
+#8EECF5 (Electric Blue)
+#98F5E1 (Aquamarine)
+#B9FBC0 (Celadon)
+*/
+
+@theme {
+    --color-jordy-blue: #a3c4f3; /* (Jordy Blue) */
+    --color-non-photo-blue: #90dbf4; /* (Non Photo Blue) */
+    --color-mauve: #cfbaf0; /* (Mauve) */
+    --color-tea-rose: #ffcfd2; /* (Tea-Rose) */
+    --color-pink-lavender: #f1c0e8; /* (Pink Lavender) */
+    --color-champagne-pink: #fde4cf; /* (Champagne Pink) */
+    --color-celedon: #b9fbc0; /* (Celadon) */
+    --color-aquamarine: #98f5e1; /* (Aquamarine) */
+    --color-lemon-chiffon: #fbf8cc; /* (Lemon Chiffon) */
+    --color-white-smoke: #f9f9fb; /* (White Smoke) */
+
+    --color-primary: var(--color-jordy-blue);
+    --color-primary-light: var(--color-non-photo-blue);
+    --color-primary-dark: var(--color-mauve);
+
+    --color-accent: var(--color-tea-rose);
+    --color-accent-light: var(--color-pink-lavender);
+    --color-accent-dark: var(--color-champagne-pink);
+
+    --color-success: var(--color-celedon);
+    --color-info: var(--color-aquamarine);
+    --color-warm: var(--color-lemon-chiffon);
+
+    --color-card: var(--color-white-smoke); /* (White Smoke) */
+    --color-page-background: #ffffff; /* (White) */
+    --color-heading-text: #2d2d2d; /* (Black) */
+    --color-body-text: #2d2d2d; /* (Black) */
+    --color-link-default: var(--color-primary);
+    --color-link-hover: var(--color-primary-light);
+    --color-button-primary-bg: var(--color-primary);
+    --color-button-primary-hover-bg: var(--color-primary-light);
+
+    --font-sans: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+    --background: var(--color-page-background);
+    --foreground: var(--color-body-text);
+    --color-primary: #8da9db; /* Jordy Blue → slightly darker */
+    --color-accent: #e8a8b5; /* Tea-Rose */
+    --color-success: #98de9e; /* Celadon */
+    --color-info: #7ee2d1; /* Aquamarine */
+    --color-warm: #eedd99; /* Lemon Chiffon */
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #2c2e3e;
+        --foreground: var(--color-text-light);
+        --color-card: #44475a;
+
+        --color-heading-text: var(--color-text-light);
+        --color-body-text: #f1f1f1;
+        --color-link-default: var(--color-primary-light);
+        --color-link-hover: var(--color-primary);
+        --color-button-primary-bg: var(--color-primary-dark);
+        --color-button-primary-hover-bg: var(--color-primary);
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

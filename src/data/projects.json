@@ -1,0 +1,102 @@
+[
+  {
+    "id": "lipht",
+    "title": "Lipht",
+    "shortDescription": "A comprehensive fitness tracking app built with Flutter and Firebase.",
+    "image": "/images/projects/lipht-home.jpg",
+    "technologies": [
+      "Dart",
+      "Flutter",
+      "Firebase (Authentication, Firestore)",
+      "Provider (State Management)",
+      "OpenAI API (GPT-4o mini)",
+      "fl_chart",
+      "Google Sign-In",
+      "Mobile Development",
+      "REST API Integration"
+    ],
+    "demoUrl": "/lipht",
+    "description": "Lipht is a mobile fitness application designed to help users track their workouts, nutrition, and sleep patterns. Developed using Flutter and Firebase, it features robust workout logging with custom program creation, exercise tracking (sets, reps, weight, RPE), and history visualization through charts (e.g., weekly volume). The nutrition section allows users to search a comprehensive food database, log meals across different categories (breakfast, lunch, dinner, snacks), and track daily caloric and macronutrient intake. A unique feature is the AI Meal Analysis, which leverages the OpenAI API to provide users with a nutritional score and feedback on their daily food logs. Lipht also includes sleep tracking (duration, quality, notes) and social features, enabling users to connect with friends, view their activity feed, and manage friend requests.",
+    "challenges": "Integrating multiple Firebase services (Auth for login, Firestore for data storage) seamlessly and managing data synchronization. Designing and implementing a scalable Firestore data structure for user-specific logs (workouts, meals, sleep) and the bidirectional friend relationship system. Implementing the AI Meal Analysis feature, including crafting effective prompts for the OpenAI API, securely handling API keys, parsing varied responses, and managing asynchronous loading/error states. Managing complex application state across different tabs and features (auth status, friend lists, workout data, logs) using the Provider pattern and Firestore streams. Building interactive UI components, especially the workout program builder, detailed logging screens, and data visualization charts using fl_chart. Handling various asynchronous operations and potential errors gracefully throughout the user experience. Structuring the Flutter application logically using features, services, repositories, and providers.",
+    "learnings": [
+      "Developed a full-stack mobile application using Flutter for the frontend and Firebase (Auth, Firestore) for the backend.",
+      "Implemented robust user authentication flows including Email/Password and Google Sign-In.",
+      "Designed and managed complex NoSQL data models in Firestore for storing user profiles, logs, custom programs, and social connections.",
+      "Mastered state management in Flutter using the Provider package, including ChangeNotifier and ProxyProvider for dependent states.",
+      "Successfully integrated and utilized a third-party AI API (OpenAI) for intelligent feature implementation (meal analysis).",
+      "Created data visualizations and charts using the fl_chart library based on user data stored in Firestore.",
+      "Built a multi-tabbed application with persistent navigation state and context-aware routing.",
+      "Managed asynchronous programming patterns (`Future`, `Stream`) extensively for network requests and real-time data updates.",
+      "Applied repository pattern for data abstraction and modular code structure."
+    ],
+    "images": [
+      "/images/projects/lipht-friends.jpg",
+      "/images/projects/lipht-fuel.jpg",
+      "/images/projects/lipht-build.jpg"
+    ],
+    "sourceUrl": "https://github.com/maynguyen26/lipht"
+  },
+  {
+    "id": "portfolio-website",
+    "title": "Personal Portfolio Website",
+    "shortDescription": "A modern, responsive portfolio website built with Next.js, TypeScript, and TailwindCSS to showcase my projects and skills as a developer.",
+    "image": "/images/projects/portfolio.jpg",
+    "technologies": [
+      "Next.js 14",
+      "TypeScript",
+      "TailwindCSS",
+      "Netlify",
+      "React",
+      "Responsive Design",
+      "Custom Domain"
+    ],
+    "demoUrl": "/",
+    "description": "This portfolio website serves as a digital showcase of my skills, projects, and professional journey. I designed and developed it from scratch using Next.js and TypeScript to create a fast, responsive, and maintainable codebase. The site features a visually appealing landing page with dynamic background transitions, smooth navigation between sections, and detailed project showcases. I implemented responsive design principles to ensure optimal viewing experience across all devices, from mobile phones to desktop computers. The website includes sections for my bio, skills, experience, projects, and a contact form for potential collaborators and employers to reach out.",
+    "challenges": "One of the main challenges I faced was implementing a responsive design that maintains visual appeal and functionality across all device sizes. Creating smooth transitions between pages and background images required careful state management and CSS optimizations. I also encountered challenges with image optimization and ensuring fast load times without sacrificing visual quality. Deploying the site with a custom domain required learning about DNS configuration and setting up proper redirects. Another challenge was creating a maintainable architecture that would make it easy to update and add new projects over time.",
+    "learnings": [
+      "Strengthened my skills with Next.js 14's App Router and server components",
+      "Improved my TypeScript proficiency by implementing strongly-typed components and data structures",
+      "Mastered TailwindCSS for efficient and responsive styling",
+      "Gained experience with Netlify deployment workflows and environment configurations",
+      "Learned to optimize images and page load performance for better user experience",
+      "Implemented custom animations and transitions to enhance visual appeal",
+      "Configured DNS settings to connect a custom domain to the deployed application"
+    ],
+    "images": [
+      "/images/projects/portfolio1.jpg",
+      "/images/projects/portfolio2.jpg"
+    ],
+    "sourceUrl": "https://github.com/maynguyen26/maynguyen-2.0",
+    "deploymentProcess": "I deployed this website using Netlify's platform, which provides an excellent hosting solution for Next.js applications. The deployment process involved connecting my GitHub repository to Netlify, configuring build settings (using 'npm run build' as the build command and '.next' as the publish directory), and setting up environment variables. I purchased the maynguyen.ca domain and configured the DNS settings to point to my Netlify deployment. Netlify's CI/CD pipeline automatically deploys updates whenever I push changes to the main branch, ensuring the website always reflects my latest work. I also benefited from Netlify's features like deploy previews for pull requests, which allowed me to preview changes before merging them into production."
+  },
+  {
+    "id": "valisthea",
+    "title": "Valisthea",
+    "shortDescription": "A tactical turn-based RPG developed with Unity and C#",
+    "image": "/images/projects/valisthea.jpg",
+    "technologies": [
+      "C#",
+      "Unity",
+      "Object-Oriented Programming",
+      "Game Development",
+      "AI",
+      "Pathfinding"
+    ],
+    "demoUrl": "/valisthea",
+    "description": "Valisthea is a tactical turn-based RPG inspired by games like Fire Emblem and Final Fantasy Tactics. Players command a party of unique characters across grid-based battlefields, making strategic decisions about unit placement, movement, and combat. The game features an extensive deployment system, turn-based combat with attack/counter mechanics, and an engaging narrative delivered through cutscenes. Players can customize their units with different weapons and items, and face challenging AI-driven enemies.",
+    "challenges": "Creating the grid-based pathfinding and tactical AI system was particularly challenging. I implemented an A* pathfinding algorithm from scratch that considers terrain obstacles and unit movement ranges. Another significant challenge was designing a flexible state machine for unit behavior that handles different combat states (idle, moving, attacking, hurt, etc.) while maintaining extensibility for player and enemy units. Developing a deployment system that integrates with the battle system required careful consideration of data flow between different game phases.",
+    "learnings": [
+      "Implemented a robust state machine architecture for unit behavior and combat sequences",
+      "Developed custom pathfinding algorithms for grid-based tactical movement",
+      "Created extensible battle system with action sequences and counter-attack mechanics",
+      "Designed a data-driven approach for unit stats, items, and map configurations",
+      "Built an enemy AI system with tactical decision-making capabilities",
+      "Integrated a scene transition and game state management system"
+    ],
+    "images": [
+      "/images/projects/valisthea1.jpg",
+      "/images/projects/valisthea2.jpg"
+    ],
+    "sourceUrl": "https://github.com/maynguyen26/valisthea"
+  }
+]
