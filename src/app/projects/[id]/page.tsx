@@ -22,9 +22,10 @@ import {
 export default async function ProjectDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const project = projectsData.find((p) => p.id === params.id) as ProjectDetail;
+  const { id } = await params;
+  const project = projectsData.find((p) => p.id === id) as ProjectDetail;
 
   if (!project) {
     return (
