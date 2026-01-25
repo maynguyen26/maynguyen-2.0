@@ -142,6 +142,7 @@ export default function ProjectsPage() {
                 <Image
                   src={filteredProjects[0].image}
                   alt={filteredProjects[0].title}
+                  fill
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>

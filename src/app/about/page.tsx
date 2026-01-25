@@ -58,6 +58,7 @@ export default function AboutPage() {
                 <Image
                   src="/images/profile.jpg"
                   alt="May Nguyen"
+                  fill
                   className="w-full h-full object-cover object-top rounded-xl"
                 />
               </div>
