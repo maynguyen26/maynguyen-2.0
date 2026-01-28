@@ -12,7 +12,7 @@ export interface Education {
 const educationData: Education = {
   degree: "Bachelor of Computing Honours",
   institution: "University of Guelph",
-  period: "September 2019 – Present",
+  period: "September 2019 – August 2025",
   majors: ["Major in Computer Science (Co-op)", "Minor in Mathematics"],
   courses: [
     {

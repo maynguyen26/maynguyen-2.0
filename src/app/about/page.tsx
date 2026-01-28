@@ -37,7 +37,7 @@ export default function AboutPage() {
             About May Nguyen
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Upcoming Computer Science graduate with a passion for thoughtful
+            Computer Science graduate with a passion for thoughtful
             design, clean code, and solving real-world problems through
             intuitive software.
           </p>

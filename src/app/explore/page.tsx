@@ -89,7 +89,7 @@ export default function ExplorePage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Hello! Welcome to my portfolio. I&apos;m May, a soon-to-be computer
+            Hello! Welcome to my portfolio. I&apos;m May, a computer
             science graduate passionate about software development. Explore my
             journey, skills, and projects below.
           </motion.p>
