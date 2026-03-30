@@ -8,62 +8,155 @@ import {
   WrenchScrewdriverIcon,
   DocumentTextIcon,
   RocketLaunchIcon,
+  CloudIcon,
 } from "@heroicons/react/24/outline";
 
+// ─────────────────────────────────────────────────────────────
+// MATCHING STRATEGY
+//
+// Languages → EXACT match only (prevents short strings like "c"
+//   from colliding inside "Azure Static Web Apps", etc.)
+//
+// Everything else → CONTAINS match (substring of lowercased name)
+//   Use specific enough keywords to avoid false positives.
+// ─────────────────────────────────────────────────────────────
+
+const EXACT_LANGUAGES = [
+  "c",
+  "c++",
+  "c#",
+  "c/c++",
+  "c/c++/c#",
+  "java",
+  "sql",
+  "php",
+  "dart",
+  "python",
+  "javascript",
+  "typescript",
+  "assembly",
+  "assembly (m68000)",
+  "html",
+  "css",
+  "html/css",
+];
+
 export const TECH_CATEGORIES = {
-  languages: [
-    "javascript",
-    "typescript",
-    "c ",
-    "c++",
-    "c#",
-    "java",
-    "python",
-    "dart",
-    "php",
-    "cobol",
-    "fortran",
-    "pascal",
-    "assembly",
-  ],
+  // Exact-matched — see EXACT_LANGUAGES above
+  languages: EXACT_LANGUAGES,
+
+  // UI / client-side
   frontend: [
     "react",
     "next",
     "vue",
     "angular",
-    "html",
-    "css",
     "tailwind",
     "flutter",
+    "svelte",
+    "html/css",
   ],
-  backend: ["node", "express", "spring boot", ".net", "api"],
-  database: ["sql", "mongo", "database", "firebase"],
-  testing: ["jest"],
-  gamedev: ["unity"],
-  devops: ["docker", "ci/cd", "deployment"],
+
+  // Server-side / API
+  backend: [
+    ".net",
+    "asp.net",
+    "node",
+    "express",
+    "spring boot",
+    "entity framework",
+    "jwt",
+    "bcrypt",
+    "rest api",
+    "api",
+  ],
+
+  // Data storage
+  database: [
+    "sql server",
+    "mysql",
+    "mariadb",
+    "postgresql",
+    "mongodb",
+    "firebase",
+    "firestore",
+    "sqlite",
+  ],
+
+  // Cloud platforms & hosting
+  cloud: [
+    "azure",
+    "aws",
+    "gcp",
+    "vercel",
+    "netlify",
+    "heroku",
+    "cloudflare",
+  ],
+
+  // Build, deploy, infrastructure
+  devops: [
+    "docker",
+    "ci/cd",
+    "github actions",
+    "kubernetes",
+    "jenkins",
+    "pipeline",
+    "deployment",
+  ],
+
+  // Quality assurance
+  testing: [
+    "jest",
+    "sonarqube",
+    "junit",
+    "pytest",
+    "vitest",
+    "cypress",
+  ],
+
+  // Game engines
+  gamedev: [
+    "unity",
+    "unreal",
+    "godot",
+    "construct",
+  ],
+
+  // Developer tooling
   tools: [
     "github",
     "gitlab",
     "git",
     "visual studio code",
-    "netlify",
-    "aws",
-    "vercel",
-    "domain",
+    "vs code",
+    "visual studio",
+    "jira",
+    "figma",
+    "postman",
   ],
 } as const;
+
+// ─────────────────────────────────────────────────────────────
+// TYPES
+// ─────────────────────────────────────────────────────────────
 
 export type CategoryResult = {
   languages: string[];
   frontend: string[];
   backend: string[];
   database: string[];
+  cloud: string[];
+  devops: string[];
   testing: string[];
   gamedev: string[];
-  devops: string[];
   tools: string[];
   other: string[];
 };
+
+// ─────────────────────────────────────────────────────────────
+// CATEGORIZATION FUNCTION
+// ─────────────────────────────────────────────────────────────
 
 export function categorizeByKeywords(technologies: string[]): CategoryResult {
   const result: CategoryResult = {
@@ -71,46 +164,35 @@ export function categorizeByKeywords(technologies: string[]): CategoryResult {
     frontend: [],
     backend: [],
     database: [],
+    cloud: [],
+    devops: [],
     testing: [],
     gamedev: [],
-    devops: [],
     tools: [],
     other: [],
   };
 
   technologies.forEach((tech) => {
-    const lowerTech = tech.toLowerCase();
-    if (
-      TECH_CATEGORIES.languages.some((keyword) => lowerTech.includes(keyword))
-    ) {
+    const lower = tech.toLowerCase().trim();
+
+    // Languages: exact match only to avoid substring collisions
+    if (EXACT_LANGUAGES.includes(lower)) {
       result.languages.push(tech);
-    } else if (
-      TECH_CATEGORIES.frontend.some((keyword) => lowerTech.includes(keyword))
-    ) {
+    } else if (TECH_CATEGORIES.frontend.some((kw) => lower.includes(kw))) {
       result.frontend.push(tech);
-    } else if (
-      TECH_CATEGORIES.backend.some((keyword) => lowerTech.includes(keyword))
-    ) {
+    } else if (TECH_CATEGORIES.backend.some((kw) => lower.includes(kw))) {
       result.backend.push(tech);
-    } else if (
-      TECH_CATEGORIES.database.some((keyword) => lowerTech.includes(keyword))
-    ) {
+    } else if (TECH_CATEGORIES.database.some((kw) => lower.includes(kw))) {
       result.database.push(tech);
-    } else if (
-      TECH_CATEGORIES.testing.some((keyword) => lowerTech.includes(keyword))
-    ) {
-      result.testing.push(tech);
-    } else if (
-      TECH_CATEGORIES.gamedev.some((keyword) => lowerTech.includes(keyword))
-    ) {
-      result.gamedev.push(tech);
-    } else if (
-      TECH_CATEGORIES.devops.some((keyword) => lowerTech.includes(keyword))
-    ) {
+    } else if (TECH_CATEGORIES.cloud.some((kw) => lower.includes(kw))) {
+      result.cloud.push(tech);
+    } else if (TECH_CATEGORIES.devops.some((kw) => lower.includes(kw))) {
       result.devops.push(tech);
-    } else if (
-      TECH_CATEGORIES.tools.some((keyword) => lowerTech.includes(keyword))
-    ) {
+    } else if (TECH_CATEGORIES.testing.some((kw) => lower.includes(kw))) {
+      result.testing.push(tech);
+    } else if (TECH_CATEGORIES.gamedev.some((kw) => lower.includes(kw))) {
+      result.gamedev.push(tech);
+    } else if (TECH_CATEGORIES.tools.some((kw) => lower.includes(kw))) {
       result.tools.push(tech);
     } else {
       result.other.push(tech);
@@ -120,6 +202,10 @@ export function categorizeByKeywords(technologies: string[]): CategoryResult {
   return result;
 }
 
+// ─────────────────────────────────────────────────────────────
+// STYLES
+// ─────────────────────────────────────────────────────────────
+
 export type CategoryStyle = {
   bg: string;
   text: string;
@@ -127,7 +213,6 @@ export type CategoryStyle = {
   iconColor: string;
 };
 
-// Basic styles without icons
 export const getCategoryStyles = (
   category: keyof CategoryResult,
 ): CategoryStyle => {
@@ -155,6 +240,12 @@ export const getCategoryStyles = (
       text: "text-indigo-700",
       border: "border-indigo-100",
       iconColor: "text-indigo-500",
+    },
+    cloud: {
+      bg: "bg-sky-50",
+      text: "text-sky-700",
+      border: "border-sky-100",
+      iconColor: "text-sky-500",
     },
     testing: {
       bg: "bg-red-50",
@@ -191,51 +282,42 @@ export const getCategoryStyles = (
   return styles[category];
 };
 
+// ─────────────────────────────────────────────────────────────
+// ICONS
+// ─────────────────────────────────────────────────────────────
+
 export const getCategoryIcon = (category: keyof CategoryResult) => {
   switch (category) {
-    case "languages":
-      return DocumentTextIcon;
-    case "frontend":
-      return CpuChipIcon;
-    case "backend":
-      return ServerIcon;
-    case "database":
-      return CommandLineIcon;
-    case "testing":
-      return BeakerIcon;
-    case "gamedev":
-      return PuzzlePieceIcon;
-    case "devops":
-      return RocketLaunchIcon;
-    case "tools":
-      return WrenchScrewdriverIcon;
-    case "other":
-      return CodeBracketIcon;
+    case "languages":  return DocumentTextIcon;
+    case "frontend":   return CpuChipIcon;
+    case "backend":    return ServerIcon;
+    case "database":   return CommandLineIcon;
+    case "cloud":      return CloudIcon;
+    case "testing":    return BeakerIcon;
+    case "gamedev":    return PuzzlePieceIcon;
+    case "devops":     return RocketLaunchIcon;
+    case "tools":      return WrenchScrewdriverIcon;
+    case "other":      return CodeBracketIcon;
   }
 };
 
-// Get the display name for a category
+// ─────────────────────────────────────────────────────────────
+// DISPLAY NAMES
+// ─────────────────────────────────────────────────────────────
+
 export const getCategoryDisplayName = (
   category: keyof CategoryResult,
 ): string => {
   switch (category) {
-    case "languages":
-      return "Languages";
-    case "frontend":
-      return "Frontend";
-    case "backend":
-      return "Backend";
-    case "database":
-      return "Database";
-    case "testing":
-      return "Testing";
-    case "gamedev":
-      return "Game Development";
-    case "devops":
-      return "DevOps";
-    case "tools":
-      return "Tools";
-    case "other":
-      return "Other";
+    case "languages":  return "Languages";
+    case "frontend":   return "Frontend";
+    case "backend":    return "Backend";
+    case "database":   return "Database";
+    case "cloud":      return "Cloud";
+    case "testing":    return "Testing";
+    case "gamedev":    return "Game Development";
+    case "devops":     return "DevOps";
+    case "tools":      return "Tools";
+    case "other":      return "Other";
   }
 };

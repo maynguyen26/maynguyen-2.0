@@ -1,8 +1,8 @@
 const introductionData = {
   title: "Hi, I'm May",
   paragraphs: [
-    "I'm a newly graduated Computer Science major at the University of Guelph with a minor in Mathematics, combining technical expertise with leadership experience. My diverse background includes software development roles across various domains, teaching experience, and leadership as captain of the University's Varsity Ultimate Frisbee team.",
-    "I excel in collaborative environments where I can apply my attention to detail, problem-solving abilities, and strong communication skills. My academic foundation and practical experience have prepared me to tackle complex challenges and deliver impactful solutions.",
+    "I'm a full-stack software developer based in Winnipeg, MB, with hands-on experience building web and mobile applications across React, Flutter, .NET, and more. I recently completed my Bachelor of Computing (Honours) in Computer Science at the University of Guelph and am actively seeking full-time software development opportunities where I can contribute, grow, and build things that matter.",
+    "My background spans frontend development, application security, mobile apps, and interactive tooling — shaped by co-op roles at companies like Juice Inc. and Deleptual, and complemented by a year of teaching computer architecture as a TA. Outside of code, I spent four years leading the University of Guelph's Women's Varsity Ultimate Frisbee team, an experience that sharpened my communication, organization, and ability to bring people together.",
   ],
 };
 

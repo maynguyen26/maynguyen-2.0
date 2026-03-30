@@ -11,7 +11,7 @@ import {
   ArrowTopRightOnSquareIcon,
   CalendarIcon,
 } from "@heroicons/react/24/outline";
-import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaTiktok, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
 export default function ConnectPage() {
@@ -23,7 +23,7 @@ export default function ConnectPage() {
     {
       name: "LinkedIn",
       icon: FaLinkedinIn,
-      url: "https://linkedin.com/in/maynguyen",
+      url: "https://linkedin.com/in/mnguye",
       color:
         "bg-[#0077B5]/10 text-[#0077B5] hover:bg-[#0077B5] hover:text-white",
     },
@@ -35,16 +35,15 @@ export default function ConnectPage() {
         "bg-gray-800/10 text-gray-800 dark:text-gray-200 hover:bg-gray-800 hover:text-white",
     },
     {
-      name: "Twitter",
-      icon: FaTwitter,
-      url: "https://twitter.com/maycoding",
-      color:
-        "bg-[#1DA1F2]/10 text-[#1DA1F2] hover:bg-[#1DA1F2] hover:text-white",
+      name: "TikTok",
+      icon: FaTiktok,
+      url: "https://tiktok.com/@maynguyen26",
+      color: "bg-black/10 text-black dark:text-white hover:bg-black hover:text-white",
     },
     {
       name: "Instagram",
       icon: FaInstagram,
-      url: "https://instagram.com/may.codes",
+      url: "https://instagram.com/may._nguyen",
       color:
         "bg-gradient-to-r from-[#833AB4]/10 via-[#FD1D1D]/10 to-[#FCAF45]/10 text-[#FD1D1D] hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCAF45] hover:text-white",
     },
@@ -160,7 +159,7 @@ export default function ConnectPage() {
                       Availability
                     </p>
                     <p className="font-medium text-gray-800 dark:text-gray-200">
-                      Graduating August 2025 - Open to opportunities
+                      Graduated August 2025 - Actively seeking opportunities
                     </p>
                   </div>
                 </div>
@@ -333,8 +332,7 @@ export default function ConnectPage() {
                     </span>
                   </div>
                   <p className="mt-2 text-gray-600 dark:text-gray-300">
-                    I&apos;m graduating in August 2025 and am actively seeking
-                    full-time software development positions starting May 2025.
+                    I graduated in August of 2025 and I am actively seeking full-time software development positions.
                   </p>
                 </div>
 

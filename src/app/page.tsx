@@ -63,12 +63,12 @@ export default function LandingPage() {
             style={{ textShadow: "1px 1px 3px rgba(0, 0, 0, 0.6)" }}
           >
             <p className="text-lg md:text-xl">
-              University of Guelph, Computer Science Major
+              University of Guelph, Computer Science Graduate
             </p>
             <p className="text-lg md:text-xl">
               Gryphons Varsity Ultimate Captain
             </p>
-            <p className="text-lg md:text-xl">Aspiring Software Developer</p>
+            <p className="text-lg md:text-xl">Software Developer</p>
           </div>
           <Link
             href="/explore"

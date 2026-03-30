@@ -1,4 +1,58 @@
-[
+[ 
+  {
+    "id": "westgate-pension",
+    "title": "Westgate Pension",
+    "shortDescription": "A full stack pension administration system built with .NET 10, React, and TypeScript featuring JWT authentication and role-based member and admin portals.",
+    "image": "/images/projects/westgate-pension.png",
+    "technologies": [
+      "C#",
+      ".NET 10",
+      "ASP.NET Core Web API",
+      "Entity Framework Core",
+      "Microsoft SQL Server",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "JWT Authentication",
+      "Docker",
+      "Azure App Service",
+      "Azure SQL Database",
+      "Azure Static Web Apps",
+      "GitHub Actions",
+      "REST API"
+    ],
+    "demoUrl": "https://westgatepension.may-nguyen.ca",
+    "description": "Westgate Pension is a full stack pension administration platform that simulates real-world member and employer portals used by pension consulting firms. The system features two distinct role-based portals — employees can log in to view their pension details, run new calculations based on salary and contribution rate, and track their full calculation history. Administrators have access to an organization-wide dashboard showing all members, their profiles, and calculation histories. Built with .NET 10 Web API on the backend and React with TypeScript on the frontend, the application uses Entity Framework Core for database management with SQL Server, JWT authentication for secure access, and BCrypt for password hashing. The project is fully deployed on Azure with a CI/CD pipeline via GitHub Actions that automatically deploys on every push to main.",
+    "challenges": "One of the main architectural challenges was resolving a circular reference issue caused by the one-to-many relationship between Employee and PensionCalculation entities during JSON serialization. I solved this using [JsonIgnore] and a nullable navigation property, though I identified DTOs as the production-grade solution. Setting up the production deployment on Azure required configuring SQL Server firewall rules, running EF Core migrations automatically on startup, managing environment variables for JWT secrets and connection strings, and configuring CORS to allow requests from the deployed frontend. Switching from LocalDB to Docker for local development and then to Azure SQL for production required careful connection string management using .NET User Secrets locally and Azure App Service environment variables in production.",
+    "learnings": [
+      "Built a RESTful API with ASP.NET Core following a layered architecture — controllers, services, and data access layers with clear separation of concerns.",
+      "Implemented JWT authentication with role-based access control, allowing employees to access only their own data while admins can manage the entire organization.",
+      "Used Entity Framework Core code-first migrations to manage database schema changes across local Docker and production Azure SQL environments.",
+      "Designed a relational database schema with a one-to-many relationship between employees and pension calculations, applying normalization principles.",
+      "Built a reusable React component library with Tailwind CSS design tokens, keeping components under 100 lines and following single responsibility principles.",
+      "Implemented custom React hooks to separate data fetching logic from UI components, improving maintainability and reusability.",
+      "Configured a full CI/CD pipeline using GitHub Actions for automatic deployment to Azure App Service and Azure Static Web Apps on every push to main.",
+      "Managed sensitive credentials using .NET User Secrets locally and Azure App Service environment variables in production, keeping secrets out of source control.",
+      "Applied mobile responsive design using Tailwind CSS breakpoint utilities ensuring the app works across all device sizes."
+    ],
+    "images": [
+      "/images/projects/westgate-pension-login.png",
+      "/images/projects/westgate-pension-employee.png",
+      "/images/projects/westgate-pension-admin.png"
+    ],
+    "sourceUrl": "https://github.com/maynguyen26/PensionCalculator",
+    "deploymentProcess": "The application is deployed across three Azure services — the .NET backend runs on Azure App Service, the React frontend is hosted on Azure Static Web Apps, and the database runs on Azure SQL Database. A GitHub Actions CI/CD pipeline automatically builds and deploys both the backend and frontend whenever changes are pushed to the main branch. EF Core migrations run automatically on application startup, ensuring the production database schema stays in sync with the codebase. Environment variables including the JWT secret key and database connection string are managed through Azure App Service configuration, keeping all credentials out of source control. The custom domain westgatepension.may-nguyen.ca is configured via GoDaddy DNS with CNAME records pointing to the Azure deployment URLs.",
+    "demoCredentials": {
+      "admin": {
+        "email": "admin@westgate-pension.ca",
+        "password": "Password123!"
+      },
+      "employee": {
+        "email": "may.nguyen@westgate-pension.ca",
+        "password": "Password123!"
+      }
+    }
+  },
   {
     "id": "lipht",
     "title": "Lipht",

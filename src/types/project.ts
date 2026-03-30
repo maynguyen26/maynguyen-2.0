@@ -1,3 +1,8 @@
+export interface DemoCredentials {
+  email: string;
+  password: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -14,4 +19,8 @@ export interface ProjectDetail extends Project {
   learnings: string[];
   images: string[];
   deploymentProcess?: string;
+  demoCredentials?: {
+    admin?: DemoCredentials;
+    employee?: DemoCredentials;
+  };
 }
