@@ -8,9 +8,13 @@ import {
   AdjustmentsHorizontalIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
-import { categorizeByKeywords } from "@/utils/techCategories";
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  categorizeByKeywords,
+  getCategoryStyles,
+  CategoryResult,
+} from "@/utils/techCategories";
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
@@ -163,30 +167,14 @@ export default function ProjectsPage() {
                         techs.includes(tech),
                       )?.[0] || "other";
 
-                    let bgColor = "bg-gray-100";
-                    let textColor = "text-gray-800";
-
-                    if (category === "frontend") {
-                      bgColor = "bg-blue-50";
-                      textColor = "text-blue-700";
-                    } else if (category === "backend") {
-                      bgColor = "bg-green-50";
-                      textColor = "text-green-700";
-                    } else if (category === "languages") {
-                      bgColor = "bg-yellow-50";
-                      textColor = "text-yellow-700";
-                    } else if (category === "database") {
-                      bgColor = "bg-purple-50";
-                      textColor = "text-purple-700";
-                    } else if (category === "tools") {
-                      bgColor = "bg-orange-50";
-                      textColor = "text-orange-700";
-                    }
+                    const styles = getCategoryStyles(
+                      category as keyof CategoryResult
+                    );
 
                     return (
                       <span
                         key={index}
-                        className={`px-3 py-1 ${bgColor} ${textColor} text-sm rounded-full`}
+                        className={`px-3 py-1 ${styles.bg} ${styles.text} text-sm rounded-full border ${styles.border}`}
                       >
                         {tech}
                       </span>
