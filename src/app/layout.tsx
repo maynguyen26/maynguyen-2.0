@@ -9,6 +9,9 @@ export const metadata = {
   title: "May Nguyen — Software Developer",
   description:
     "Full-stack software developer based in Winnipeg, MB. Specializing in React, Next.js, .NET, and mobile development.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
