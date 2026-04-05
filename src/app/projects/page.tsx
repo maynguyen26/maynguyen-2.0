@@ -15,6 +15,7 @@ import {
   getCategoryStyles,
   CategoryResult,
 } from "@/utils/techCategories";
+import { containerVariants, itemVariants } from "@/utils/animationVariants";
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
@@ -42,26 +43,6 @@ export default function ProjectsPage() {
             categorized[activeFilter as keyof typeof categorized]?.length > 0
           );
         });
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
 
   return (
     <div className="min-h-screen bg-card py-16">

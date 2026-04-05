@@ -17,25 +17,10 @@ import {
   getCategoryStyles,
 } from "@/utils/techCategories";
 import Link from "next/link";
+import { containerVariants, itemVariants } from "@/utils/animationVariants";
+
 
 export default function ExperiencePage() {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
 
   return (
     <div className="min-h-screen bg-card py-16">
