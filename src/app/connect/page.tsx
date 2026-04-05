@@ -127,7 +127,7 @@ export default function ConnectPage() {
                     </p>
                     <p className="font-medium text-gray-800 dark:text-gray-200">
                       <Link
-                        href="tel:+14165555555"
+                        href="tel:+15192409219"
                         className="hover:text-accent transition-colors"
                       >
                         (519) 240-9219
@@ -387,14 +387,14 @@ export default function ConnectPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
-                      href="mailto:may@maynguyen.ca?subject=Interview Request"
+                      href="mailto:maynguyen26@gmail.com?subject=Interview Request"
                       className="flex items-center justify-center py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
                     >
                       <EnvelopeIcon className="w-5 h-5 mr-2" />
                       <span>Email to Schedule</span>
                     </Link>
                     <Link
-                      href="/files/may-nguyen-resume.pdf"
+                      href="/resume.pdf"
                       download
                       className="flex items-center justify-center py-2 px-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                     >
