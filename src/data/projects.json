@@ -118,7 +118,7 @@
     ],
     "images": [
       "/images/projects/portfolio1.jpg",
-      "/images/projects/portfolio2.jpg"
+      "/images/projects/portfolio2.png"
     ],
     "sourceUrl": "https://github.com/maynguyen26/maynguyen-2.0",
     "deploymentProcess": "The site is deployed on Netlify, connected directly to the GitHub repository for continuous deployment. Every push to main triggers an automatic build and deploy, so the live site always reflects the latest changes. I configured the build command as 'npm run build' with Turbopack for faster local development, and set up the custom domain maynguyen.ca with DNS pointing to the Netlify deployment. Netlify's deploy preview feature lets me review changes on a staging URL before they go live."
