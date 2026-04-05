@@ -28,7 +28,7 @@ export default function ExplorePage() {
       description: "Explore my educational background and work experience.",
       href: "/experience",
       icon: BriefcaseIcon,
-      image: "/images/explore/experience.jpg",
+      image: "/images/explore/experience.jpeg",
       gradientFrom: "from-primary",
       gradientTo: "to-primary-dark",
     },
@@ -37,7 +37,7 @@ export default function ExplorePage() {
       description: "Check out the projects I've worked on.",
       href: "/projects",
       icon: CodeBracketIcon,
-      image: "/images/explore/projects.jpg",
+      image: "/images/explore/projects.jpeg",
       gradientFrom: "from-primary-dark",
       gradientTo: "to-accent-light",
     },
@@ -46,7 +46,7 @@ export default function ExplorePage() {
       description: "Get in touch with me for opportunities or collaboration.",
       href: "/connect",
       icon: EnvelopeIcon,
-      image: "/images/explore/connect.jpg",
+      image: "/images/explore/connect.jpeg",
       gradientFrom: "from-accent-light",
       gradientTo: "to-accent",
     },
@@ -97,7 +97,7 @@ export default function ExplorePage() {
               <Link href={section.href} className="block h-full">
                 <div className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                   {/* Image Section - Clean with no overlays */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-80 overflow-hidden">
                     <Image
                       src={section.image}
                       alt={section.title}
