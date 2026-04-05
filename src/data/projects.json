@@ -96,32 +96,32 @@
     "shortDescription": "A modern, responsive portfolio website built with Next.js, TypeScript, and TailwindCSS to showcase my projects and skills as a developer.",
     "image": "/images/projects/portfolio.jpg",
     "technologies": [
-      "Next.js 14",
-      "TypeScript",
-      "TailwindCSS",
+      "Next.js 16",
+      "React 19",
+      "TypeScript 5",
+      "TailwindCSS 4",
+      "Framer Motion 12",
       "Netlify",
-      "React",
-      "Responsive Design",
       "Custom Domain"
     ],
     "demoUrl": "/",
-    "description": "This portfolio website serves as a digital showcase of my skills, projects, and professional journey. I designed and developed it from scratch using Next.js and TypeScript to create a fast, responsive, and maintainable codebase. The site features a visually appealing landing page with dynamic background transitions, smooth navigation between sections, and detailed project showcases. I implemented responsive design principles to ensure optimal viewing experience across all devices, from mobile phones to desktop computers. The website includes sections for my bio, skills, experience, projects, and a contact form for potential collaborators and employers to reach out.",
-    "challenges": "One of the main challenges I faced was implementing a responsive design that maintains visual appeal and functionality across all device sizes. Creating smooth transitions between pages and background images required careful state management and CSS optimizations. I also encountered challenges with image optimization and ensuring fast load times without sacrificing visual quality. Deploying the site with a custom domain required learning about DNS configuration and setting up proper redirects. Another challenge was creating a maintainable architecture that would make it easy to update and add new projects over time.",
+    "description": "This portfolio website serves as a digital showcase of my skills, projects, and professional journey. I designed and developed it from scratch using Next.js 16 with the App Router, TypeScript, and TailwindCSS 4. The site features smooth page transitions powered by Framer Motion, dynamic background effects, and a clean component architecture with a clear separation between server and client components. I applied a data/UI separation pattern — keeping content in dedicated data files and shared utilities in a utils layer — to make the codebase easy to maintain and extend. The website includes sections for my bio, skills, experience, projects, and a contact form, and is fully responsive across all device sizes.",
+    "challenges": "One of the main challenges was managing the boundary between server and client components in Next.js 16's App Router — particularly when integrating Framer Motion animations, which require client-side rendering. I solved this by extracting a dedicated PageTransition client component rather than marking the entire layout as a client component. Keeping the design system consistent required centralizing shared animation variants and utility functions rather than duplicating logic across components. I also worked to eliminate dead code accumulated over iterations of the site and refactor larger page components into focused subcomponents.",
     "learnings": [
-      "Strengthened my skills with Next.js 14's App Router and server components",
-      "Improved my TypeScript proficiency by implementing strongly-typed components and data structures",
-      "Mastered TailwindCSS for efficient and responsive styling",
-      "Gained experience with Netlify deployment workflows and environment configurations",
-      "Learned to optimize images and page load performance for better user experience",
-      "Implemented custom animations and transitions to enhance visual appeal",
-      "Configured DNS settings to connect a custom domain to the deployed application"
+      "Deepened my understanding of Next.js 16's App Router and the server/client component boundary",
+      "Practiced extracting reusable client components to keep layouts server-rendered where possible",
+      "Applied a data/UI separation pattern to keep components clean and content easy to update",
+      "Strengthened my TypeScript skills through strongly-typed components and shared data structures",
+      "Used TailwindCSS 4 utility classes consistently, replacing inline styles throughout the codebase",
+      "Configured SEO metadata at the layout level for better search visibility",
+      "Set up continuous deployment via Netlify with automatic deploys on every push to main"
     ],
     "images": [
       "/images/projects/portfolio1.jpg",
       "/images/projects/portfolio2.jpg"
     ],
     "sourceUrl": "https://github.com/maynguyen26/maynguyen-2.0",
-    "deploymentProcess": "I deployed this website using Netlify's platform, which provides an excellent hosting solution for Next.js applications. The deployment process involved connecting my GitHub repository to Netlify, configuring build settings (using 'npm run build' as the build command and '.next' as the publish directory), and setting up environment variables. I purchased the maynguyen.ca domain and configured the DNS settings to point to my Netlify deployment. Netlify's CI/CD pipeline automatically deploys updates whenever I push changes to the main branch, ensuring the website always reflects my latest work. I also benefited from Netlify's features like deploy previews for pull requests, which allowed me to preview changes before merging them into production."
+    "deploymentProcess": "The site is deployed on Netlify, connected directly to the GitHub repository for continuous deployment. Every push to main triggers an automatic build and deploy, so the live site always reflects the latest changes. I configured the build command as 'npm run build' with Turbopack for faster local development, and set up the custom domain maynguyen.ca with DNS pointing to the Netlify deployment. Netlify's deploy preview feature lets me review changes on a staging URL before they go live."
   },
   {
     "id": "valisthea",
