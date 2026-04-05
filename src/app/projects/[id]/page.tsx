@@ -92,7 +92,7 @@ export default async function ProjectDetailPage({
                 src={project.image}
                 alt={project.title}
                 fill
-                style={{ objectFit: "cover" }}
+                className="object-cover"
               />
             </div>
 
@@ -249,7 +249,7 @@ export default async function ProjectDetailPage({
                       src={image}
                       alt={`${project.title} screenshot ${index + 1}`}
                       fill
-                      style={{ objectFit: "cover" }}
+                      className="object-cover"
                     />
                   </div>
                 ))}
@@ -277,8 +277,7 @@ export default async function ProjectDetailPage({
                     src={image}
                     alt={`${project.title} screenshot ${index + 1}`}
                     fill
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform group-hover:scale-105"
+                    className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
                 <p className="text-sm text-gray-500 mt-2 text-center">
